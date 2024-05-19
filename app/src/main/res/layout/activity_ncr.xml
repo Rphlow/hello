@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/black"
+        android:background="@color/purple"
         app:titleTextColor="@color/white"
         android:theme="?attr/actionBarTheme"
         android:title="Cities" />
@@ -22,8 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/search_view_bg"
-        app:queryHint="Search Here ..."
-        app:iconifiedByDefault="false"/>
+        app:queryHint="Search Here ..." />
 
     <ListView
         android:id="@+id/listView"

@@ -13,6 +13,55 @@
         android:theme="@style/Theme.Hello"
         tools:targetApi="31">
         <activity
+            android:name=".Municipality_LaUnion"
+            android:exported="false" />
+        <activity
+            android:name=".City_LaUnion"
+            android:exported="false" />
+        <activity
+            android:name=".Municipalities_IlocosSur"
+            android:exported="false" />
+        <activity
+            android:name=".MunicipalityNCR"
+            android:exported="false" />
+        <activity
+            android:name=".CitiesNCR"
+            android:exported="false" />
+        <activity
+            android:name=".City_IlocosSur"
+            android:exported="false" />
+        <activity
+            android:name=".CityIlocosNorteDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Municipality_IlocosNorte"
+            android:exported="false" />
+        <activity
+            android:name=".City_IlocosNorte"
+            android:exported="false" />
+        <activity
+            android:name=".NCR"
+            android:exported="false"
+            android:theme="@style/Base.Theme.Hello" />
+        <activity
+            android:name=".CAR"
+            android:exported="false" />
+        <activity
+            android:name=".region5"
+            android:exported="false" />
+        <activity
+            android:name=".region4B"
+            android:exported="false" />
+        <activity
+            android:name=".region4A"
+            android:exported="false" />
+        <activity
+            android:name=".region3"
+            android:exported="false" />
+        <activity
+            android:name=".region2"
+            android:exported="false" />
+        <activity
             android:name=".region1"
             android:exported="false" />
         <activity
@@ -23,7 +72,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Base.Theme.Hello">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
