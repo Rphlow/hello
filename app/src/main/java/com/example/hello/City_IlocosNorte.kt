@@ -39,14 +39,14 @@ class City_IlocosNorte : AppCompatActivity() {
             val message = when (city) {
                 "Batac" -> "Emergency Numbers\n " +
                         "Telephone Number:\n 1-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
+                        "Mobile Number:\n 09753627 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 105\n" +
                         " NDRRMC: 231"
                 "Laoag" -> "Emergency Numbers\n " +
                         "Telephone Number:\n 1-321-13\n 4-621-32\n " +
-                        "Mobile Number:\n 09123456 ( Smart )\n 09672134 ( Globe )\n" +
+                        "Mobile Number:\n 09725483 ( Smart )\n 09672134 ( Globe )\n" +
                         "Police Number: 911\n" +
-                        " NDRRMC: 143"
+                        " NDRRMC: 110"
                 else -> "Default message"
             }
             intent.putExtra("MESSAGE", message)
