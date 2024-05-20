@@ -77,6 +77,10 @@ class region1 : AppCompatActivity() {
                 startActivity(Intent(this@region1, City_LaUnion::class.java))
             } else if ((groupPosition == 2)&&(childPosition == 1)) {
                 startActivity(Intent(this@region1, Municipality_LaUnion::class.java))
+            } else if ((groupPosition == 3)&&(childPosition == 0)) {
+                startActivity(Intent(this@region1, City_Pangasinan::class.java))
+            } else if ((groupPosition == 3)&&(childPosition == 1)) {
+                startActivity(Intent(this@region1, Municipality_Pangasinan::class.java))
             } else{
 
 

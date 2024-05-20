@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class City_IlocosSur : AppCompatActivity() {
+class City_Pangasinan : AppCompatActivity() {
 
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var recyclerView: RecyclerView
@@ -34,23 +34,35 @@ class City_IlocosSur : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val cities = listOf(
-            "Candon",
-            "Vigan"
+            "Alaminos",
+            "Dagupan",
+            "San Carlos",
+            "Urdaneta"
         )
         cityAdapter = CityAdapter(cities) { city ->
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
-                "Candon" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 6-234-13\n 4-215-32\n " +
+                "Alaminos"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Vigan" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 1-321-13\n 4-621-32\n " +
-                        "Mobile Number:\n 09123456 ( Smart )\n 09672134 ( Globe )\n" +
-                        "Police Number: 911\n" +
-                        " NDRRMC: 143"
-                else -> "No Information Available"
+                "Dagupan"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "San Carlos"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Urdaneta"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                else -> "Default message"
             }
             intent.putExtra("MESSAGE", message)
             startActivity(intent)

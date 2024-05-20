@@ -47,7 +47,7 @@ class City_IlocosNorte : AppCompatActivity() {
                         "Mobile Number:\n 09725483 ( Smart )\n 09672134 ( Globe )\n" +
                         "Police Number: 911\n" +
                         " NDRRMC: 110"
-                else -> "Default message"
+                else -> "No Information Available"
             }
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
