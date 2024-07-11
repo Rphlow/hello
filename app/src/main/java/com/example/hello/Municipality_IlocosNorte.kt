@@ -57,7 +57,7 @@ class Municipality_IlocosNorte : AppCompatActivity() {
             "Vintar"
         )
         cityAdapter = CityAdapter(cities) { city ->
-            val intent = Intent(this, Detail::class.java)
+            val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
                 "Adams"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +

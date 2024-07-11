@@ -3,6 +3,7 @@ package com.example.hello
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.telecom.Call.Details
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
@@ -40,7 +41,7 @@ class City_Pangasinan : AppCompatActivity() {
             "Urdaneta"
         )
         cityAdapter = CityAdapter(cities) { city ->
-            val intent = Intent(this, Detail::class.java)
+            val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
                 "Alaminos"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +

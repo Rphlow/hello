@@ -11,8 +11,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple"
-        android:theme="?attr/actionBarTheme"
+        android:background="@color/red"
+        app:titleTextColor="@color/white"
         android:title="Cities" />
 
     <SearchView
@@ -30,8 +30,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="2dp"
-        android:divider="@color/purple"
-        android:childDivider="@color/blue" />
+        android:divider="@color/red"
+        android:childDivider="@color/pink"
+        android:groupIndicator="@drawable/settings_selector"
+        android:background="#ffffff"
+        android:transcriptMode="alwaysScroll"/>
 
 
 

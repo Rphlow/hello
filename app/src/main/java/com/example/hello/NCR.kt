@@ -76,15 +76,15 @@ class NCR : AppCompatActivity() {
 
             })
         }
-        fun onOptionsItemSelected(item: MenuItem): Boolean {
-            return when (item.itemId) {
-                android.R.id.home -> {
-                    onBackPressed() // Navigate back when the up button is clicked
-                    true
-                }
 
-                else -> super.onOptionsItemSelected(item)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed() // Navigate back when the up button is clicked
+                true
             }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

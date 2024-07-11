@@ -1,6 +1,7 @@
 package com.example.hello
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ExpandableListView
 import android.widget.SearchView
@@ -78,8 +79,6 @@ class CAR : AppCompatActivity() {
         val searchView: SearchView = findViewById(R.id.SearchView)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                binding.SearchView.clearFocus()
-                expandableListAdapter.filter.filter(query)
                 return false
             }
 
@@ -89,6 +88,8 @@ class CAR : AppCompatActivity() {
             }
 
         })
+
+        setIndicatorBounds()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
@@ -98,5 +99,19 @@ class CAR : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+
+    private fun setIndicatorBounds() {
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val width = displayMetrics.widthPixels
+        val expandableListView: ExpandableListView = findViewById(R.id.expandablelistView)
+        expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10))
+    }
+
+    private fun getPixelFromDips(pixels: Int): Int {
+        val scale = resources.displayMetrics.density
+        return (pixels * scale + 0.5f).toInt()
     }
 }
