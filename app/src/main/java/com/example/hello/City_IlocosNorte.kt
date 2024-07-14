@@ -12,12 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hello.databinding.ActivityCityIlocosNorteBinding
 
 class City_IlocosNorte : AppCompatActivity() {
 
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var recyclerView: RecyclerView
     private lateinit var cityAdapter: CityAdapter
+    private lateinit var binding : ActivityCityIlocosNorteBinding
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +49,7 @@ class City_IlocosNorte : AppCompatActivity() {
                         "Mobile Number:\n 09725483 ( Smart )\n 09672134 ( Globe )\n" +
                         "Police Number: 911\n" +
                         " NDRRMC: 110"
-                else -> "Default message"
+                else -> "No Information Available"
             }
             intent.putExtra("MESSAGE", message)
             startActivity(intent)

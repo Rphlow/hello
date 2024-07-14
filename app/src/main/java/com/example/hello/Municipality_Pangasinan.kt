@@ -13,7 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class Municipalities_IlocosSur : AppCompatActivity() {
+class Municipality_Pangasinan : AppCompatActivity() {
 
     private lateinit var adapter: ArrayAdapter<String>
     private lateinit var recyclerView: RecyclerView
@@ -34,53 +34,120 @@ class Municipalities_IlocosSur : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val cities = listOf(
-            "Alilem",
-            "Banayoyo",
-            "Bantay",
+            "Agno",
+            "Aguilar",
+            "Alcala",
+            "Anda",
+            "Asingan",
+            "Balungao",
+            "Bani",
+            "Basista",
+            "Bautista",
+            "Bayambang",
+            "Binalonan",
+            "Binmaley",
+            "Bolinao",
+            "Bugallon",
             "Burgos",
-            "Cabugao",
-            "Caoayan",
-            "Cervantes",
-            "Galimuyod",
-            "Gregorio del Pilar",
-            "Lidlidda",
-            "Magsingal",
-            "Nagbukel",
-            "Narvacan",
-            "Quirino",
-            "Salcedo",
-            "San Emilio",
-            "San Esteban",
-            "San Ildefonso",
-            "San Juan",
-            "San Vicente",
-            "Santa",
-            "Santa Catalina",
-            "Santa Cruz",
-            "Santa Lucia",
+            "Calasiao",
+            "Dasol",
+            "Infanta",
+            "Labrador",
+            "Laoac",
+            "Lingayen",
+            "Mabini",
+            "Malasiqui",
+            "Manaoag",
+            "Mangaldan",
+            "Mangatarem",
+            "Mapandan",
+            "Natividad",
+            "Pozorrubio",
+            "Rosales",
+            "San Fabian",
+            "San Jacinto",
+            "San Manuel",
+            "San Nicolas",
+            "San Quintin",
+            "Santa Barbara",
             "Santa Maria",
-            "Santiago",
-            "Santo Domingo",
-            "Sigay",
-            "Sinait",
-            "Sugpon",
-            "Suyo",
-            "Tagudin"
+            "Santo Tomas",
+            "Sison",
+            "Sual",
+            "Tayug",
+            "Umingan",
+            "Urbiztondo",
+            "Villasis"
         )
         cityAdapter = CityAdapter(cities) { city ->
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
-                "Alilem"-> "Emergency Numbers\n " +
+                "Agno"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Banayoyo"-> "Emergency Numbers\n " +
+                "Aguilar"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Bantay"-> "Emergency Numbers\n " +
+                "Alcala"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Anda"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Asingan"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Balungao"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Bani"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Basista"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Bautista"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Bayambang"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Binalonan"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Binmaley"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Bolinao"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Bugallon"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
@@ -90,102 +157,107 @@ class Municipalities_IlocosSur : AppCompatActivity() {
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Cabugao"-> "Emergency Numbers\n " +
+                "Calasiao"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Caoayan"-> "Emergency Numbers\n " +
+                "Dasol"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Cervantes"-> "Emergency Numbers\n " +
+                "Infanta"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Galimuyod"-> "Emergency Numbers\n " +
+                "Labrador"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Gregorio del Pilar"-> "Emergency Numbers\n " +
+                "Laoac"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Lidlidda"-> "Emergency Numbers\n " +
+                "Lingayen"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Magsingal"-> "Emergency Numbers\n " +
+                "Mabini"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Nagbukel"-> "Emergency Numbers\n " +
+                "Malasiqui"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Narvacan"-> "Emergency Numbers\n " +
+                "Manaoag"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Quirino"-> "Emergency Numbers\n " +
+                "Mangaldan"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Salcedo"-> "Emergency Numbers\n " +
+                "Mangatarem"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "San Emilio"-> "Emergency Numbers\n " +
+                "Mapandan"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "San Esteban"-> "Emergency Numbers\n " +
+                "Natividad"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "San Ildefonso"-> "Emergency Numbers\n " +
+                "Pozorrubio"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "San Juan"-> "Emergency Numbers\n " +
+                "Rosales"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "San Vicente"-> "Emergency Numbers\n " +
+                "San Fabian"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santa"-> "Emergency Numbers\n " +
+                "San Jacinto"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santa Catalina"-> "Emergency Numbers\n " +
+                "San Manuel"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santa Cruz"-> "Emergency Numbers\n " +
+                "San Nicolas"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santa Lucia"-> "Emergency Numbers\n " +
+                "San Quintin"-> "Emergency Numbers\n " +
+                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
+                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
+                        "Police Number: 112\n" +
+                        " NDRRMC: 231"
+                "Santa Barbara"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
@@ -195,37 +267,37 @@ class Municipalities_IlocosSur : AppCompatActivity() {
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santiago"-> "Emergency Numbers\n " +
+                "Santo Tomas"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Santo Domingo"-> "Emergency Numbers\n " +
+                "Sison"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Sigay"-> "Emergency Numbers\n " +
+                "Sual"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Sinait"-> "Emergency Numbers\n " +
+                "Tayug"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Sugpon"-> "Emergency Numbers\n " +
+                "Umingan"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Suyo"-> "Emergency Numbers\n " +
+                "Urbiztondo"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +
                         " NDRRMC: 231"
-                "Tagudin"-> "Emergency Numbers\n " +
+                "Villasis"-> "Emergency Numbers\n " +
                         "Telephone Number:\n 9-234-13\n 4-215-32\n " +
                         "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
                         "Police Number: 112\n" +

@@ -1,7 +1,6 @@
 package com.example.hello
 
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ExpandableListView
 import android.widget.SearchView
@@ -97,25 +96,7 @@ class CAR : AppCompatActivity() {
                 onBackPressed() // Navigate back when the up button is clicked
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-
-    private fun setIndicatorBounds() {
-        val displayMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val width = displayMetrics.widthPixels
-        val expandableListView: ExpandableListView = findViewById(R.id.expandablelistView)
-        expandableListView.setIndicatorBounds(
-            width - getPixelFromDips(50),
-            width - getPixelFromDips(10)
-        )
-    }
-
-    private fun getPixelFromDips(pixels: Int): Int {
-        val scale = resources.displayMetrics.density
-        return (pixels * scale + 0.5f).toInt()
     }
 }

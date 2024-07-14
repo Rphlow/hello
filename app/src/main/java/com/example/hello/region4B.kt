@@ -1,15 +1,14 @@
 package com.example.hello
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ExpandableListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.hello.CityExpandableListAdapter
+import com.example.hello.R
 import com.example.hello.databinding.ActivityRegion1Binding
-
 
 class region4B : AppCompatActivity() {
     private lateinit var binding: ActivityRegion1Binding
@@ -88,25 +87,7 @@ class region4B : AppCompatActivity() {
                 onBackPressed() // Navigate back when the up button is clicked
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-
-    private fun setIndicatorBounds() {
-        val displayMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val width = displayMetrics.widthPixels
-        val expandableListView: ExpandableListView = findViewById(R.id.expandablelistView)
-        expandableListView.setIndicatorBounds(
-            width - getPixelFromDips(50),
-            width - getPixelFromDips(10)
-        )
-    }
-
-    private fun getPixelFromDips(pixels: Int): Int {
-        val scale = resources.displayMetrics.density
-        return (pixels * scale + 0.5f).toInt()
     }
 }
