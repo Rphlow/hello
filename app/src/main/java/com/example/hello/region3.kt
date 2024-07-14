@@ -2,14 +2,14 @@ package com.example.hello
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ExpandableListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.hello.CityExpandableListAdapter
-import com.example.hello.R
 import com.example.hello.databinding.ActivityRegion1Binding
+
 
 class region3 : AppCompatActivity() {
     private lateinit var binding: ActivityRegion1Binding
