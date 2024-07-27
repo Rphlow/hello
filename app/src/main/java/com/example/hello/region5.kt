@@ -1,5 +1,6 @@
 package com.example.hello
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ExpandableListView
@@ -77,31 +78,23 @@ class region5 : AppCompatActivity() {
 
         expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
             val childName = childitem[groupPosition][childPosition]
-            val intent = if ((groupPosition == 0)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_Albay::class.java))
-            } else if ((groupPosition == 0)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_Albay::class.java))
-            } else if ((groupPosition == 1)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_CamarinesSur::class.java))
-            } else if ((groupPosition == 1)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_CamarinesSur::class.java))
-            } else if ((groupPosition == 2)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_CamarinesSur::class.java))
-            } else if ((groupPosition == 2)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_CamarinesSur::class.java))
-            }  else if ((groupPosition == 3)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_Sorsogon::class.java))
-            } else if ((groupPosition == 3)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_Sorsogon::class.java))
-            }  else if ((groupPosition == 4)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_Catanduanes::class.java))
-            } else if ((groupPosition == 4)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_Catanduanes::class.java))
-            }  else if ((groupPosition == 5)&&(childPosition == 0)) {
-                startActivity(Intent(this@region5, City_Masbate::class.java))
-            } else if ((groupPosition == 5)&&(childPosition == 1)) {
-                startActivity(Intent(this@region5, Municipalities_Masbate::class.java))
-            } else{
+            val intent = if ((groupPosition == 0) && (childPosition == 0)) {
+                startActivity(Intent(this@region5, City_Batanes::class.java))
+            } else if ((groupPosition == 0) && (childPosition == 1)) {
+                startActivity(Intent(this@region5, Municipalities_Batanes::class.java))
+            } else if ((groupPosition == 1) && (childPosition == 0)) {
+                startActivity(Intent(this@region5, City_Cagayan::class.java))
+            } else if ((groupPosition == 1) && (childPosition == 1)) {
+                startActivity(Intent(this@region5, Municipalities_Cagayan::class.java))
+            } else if ((groupPosition == 2) && (childPosition == 0)) {
+                startActivity(Intent(this@region5, City_NuevaVizcaya::class.java))
+            } else if ((groupPosition == 2) && (childPosition == 1)) {
+                startActivity(Intent(this@region5, Municipalities_NuevaVizcaya::class.java))
+            } else if ((groupPosition == 3) && (childPosition == 0)) {
+                startActivity(Intent(this@region5, City_Quirino::class.java))
+            } else if ((groupPosition == 3) && (childPosition == 1)) {
+                startActivity(Intent(this@region5, Municipalities_Quirino::class.java))
+            } else {
 
 
             }

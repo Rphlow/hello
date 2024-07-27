@@ -140,14 +140,14 @@ class region3 : AppCompatActivity() {
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         val width = displayMetrics.widthPixels
         val expandableListView: ExpandableListView = findViewById(R.id.expandablelistView)
-<<<<<<<<< Temporary merge branch 1
+
         expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10))
-=========
+
         expandableListView.setIndicatorBounds(
             width - getPixelFromDips(50),
             width - getPixelFromDips(10)
         )
->>>>>>>>> Temporary merge branch 2
+
     }
 
     private fun getPixelFromDips(pixels: Int): Int {
