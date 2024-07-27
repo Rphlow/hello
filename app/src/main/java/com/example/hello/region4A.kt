@@ -72,21 +72,25 @@ class region4A : AppCompatActivity() {
         expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
             val childName = childitem[groupPosition][childPosition]
             val intent = if ((groupPosition == 0) && (childPosition == 0)) {
-                startActivity(Intent(this@region4A, City_Batanes::class.java))
+                startActivity(Intent(this@region4A, City_Cavite::class.java))
             } else if ((groupPosition == 0) && (childPosition == 1)) {
-                startActivity(Intent(this@region4A, Municipalities_Batanes::class.java))
+                startActivity(Intent(this@region4A, Municipalities_Cavite::class.java))
             } else if ((groupPosition == 1) && (childPosition == 0)) {
-                startActivity(Intent(this@region4A, City_Cagayan::class.java))
+                startActivity(Intent(this@region4A, City_Laguna::class.java))
             } else if ((groupPosition == 1) && (childPosition == 1)) {
-                startActivity(Intent(this@region4A, Municipalities_Cagayan::class.java))
+                startActivity(Intent(this@region4A, Municipalities_Laguna::class.java))
             } else if ((groupPosition == 2) && (childPosition == 0)) {
-                startActivity(Intent(this@region4A, City_NuevaVizcaya::class.java))
+                startActivity(Intent(this@region4A,City_Batangas::class.java))
             } else if ((groupPosition == 2) && (childPosition == 1)) {
-                startActivity(Intent(this@region4A, Municipalities_NuevaVizcaya::class.java))
+                startActivity(Intent(this@region4A, Municipalities_Batangas::class.java))
             } else if ((groupPosition == 3) && (childPosition == 0)) {
-                startActivity(Intent(this@region4A, City_Quirino::class.java))
+                startActivity(Intent(this@region4A, City_Rizal::class.java))
             } else if ((groupPosition == 3) && (childPosition == 1)) {
-                startActivity(Intent(this@region4A, Municipalities_Quirino::class.java))
+                startActivity(Intent(this@region4A, Municipalities_Rizal::class.java))
+            } else if ((groupPosition == 4) && (childPosition == 0)) {
+                startActivity(Intent(this@region4A, City_Quezon::class.java))
+            } else if ((groupPosition == 4) && (childPosition == 1)) {
+                startActivity(Intent(this@region4A, Municipalities_Quezon::class.java))
             } else {
 
 

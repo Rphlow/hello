@@ -1,19 +1,58 @@
 package com.example.hello
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class CityIlocosNorteDetail : AppCompatActivity() {
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_city_ilocos_norte_detail)
 
-        val textView: TextView = findViewById(R.id.cityTextView)
-        val message = intent.getStringExtra("MESSAGE")
+        val container: LinearLayout = findViewById(R.id.container)
+        val message = intent.getStringExtra("MESSAGE") ?: return
 
-        textView.text = message
+        // Add title "Emergency Hotlines"
+        val titleTextView = TextView(this)
+        titleTextView.text = "Emergency Hotlines"
+        titleTextView.textSize = 20f
+        titleTextView.setPadding(0, 0, 0, 16)
+        container.addView(titleTextView)
+
+        // Split the message into lines
+        val lines = message.split("\n")
+
+        for (line in lines) {
+            val parts = line.split(":")
+            if (parts.size == 2) {
+                val description = parts[0].trim()
+                val phoneNumbers = parts[1].trim().split(",") // Handle multiple numbers
+
+                for (phoneNumber in phoneNumbers) {
+                    val trimmedNumber = phoneNumber.trim()
+
+                    val textView = TextView(this)
+                    textView.text = "$description: $trimmedNumber"
+                    textView.setPadding(0, 0, 0, 8) // Add some space between items
+                    container.addView(textView)
+
+                    val button = Button(this)
+                    button.text = "Call"
+                    button.setOnClickListener {
+                        val intent = Intent(Intent.ACTION_DIAL)
+                        intent.data = Uri.parse("tel:$trimmedNumber")
+                        startActivity(intent)
+                    }
+                    container.addView(button)
+                }
+            }
+        }
     }
 }

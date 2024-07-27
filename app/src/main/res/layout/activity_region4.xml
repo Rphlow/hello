@@ -28,7 +28,7 @@
 
     <ExpandableListView
         android:id="@+id/expandablelistView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:dividerHeight="2dp"
         android:divider="@color/red"
