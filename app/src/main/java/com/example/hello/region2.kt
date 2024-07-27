@@ -1,13 +1,13 @@
 package com.example.hello
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.MenuItem
 import android.widget.ExpandableListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.hello.CityExpandableListAdapter
-import com.example.hello.R
 import com.example.hello.databinding.ActivityRegion1Binding
 
 class region2 : AppCompatActivity() {
@@ -68,6 +68,32 @@ class region2 : AppCompatActivity() {
         expandableListAdapter = CityExpandableListAdapter(this@region2, header, childitem)
         expandableListView.setAdapter(expandableListAdapter)
 
+        expandableListView.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+            val childName = childitem[groupPosition][childPosition]
+            val intent = if ((groupPosition == 0) && (childPosition == 0)) {
+                startActivity(Intent(this@region2, City_Batanes::class.java))
+            } else if ((groupPosition == 0) && (childPosition == 1)) {
+                startActivity(Intent(this@region2, Municipalities_Batanes::class.java))
+            } else if ((groupPosition == 1) && (childPosition == 0)) {
+                startActivity(Intent(this@region2, City_Cagayan::class.java))
+            } else if ((groupPosition == 1) && (childPosition == 1)) {
+                startActivity(Intent(this@region2, Municipalities_Cagayan::class.java))
+            } else if ((groupPosition == 2) && (childPosition == 0)) {
+                startActivity(Intent(this@region2, City_NuevaVizcaya::class.java))
+            } else if ((groupPosition == 2) && (childPosition == 1)) {
+                startActivity(Intent(this@region2, Municipalities_NuevaVizcaya::class.java))
+            } else if ((groupPosition == 3) && (childPosition == 0)) {
+                startActivity(Intent(this@region2, City_Quirino::class.java))
+            } else if ((groupPosition == 3) && (childPosition == 1)) {
+                startActivity(Intent(this@region2, Municipalities_Quirino::class.java))
+            } else {
+
+
+            }
+            true
+        }
+
+
         val searchView: SearchView = findViewById(R.id.SearchView)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
@@ -80,14 +106,39 @@ class region2 : AppCompatActivity() {
             }
 
         })
+
+        setIndicatorBounds()
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed() // Navigate back when the up button is clicked
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+
+    private fun setIndicatorBounds() {
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val width = displayMetrics.widthPixels
+        val expandableListView: ExpandableListView = findViewById(R.id.expandablelistView)
+<<<<<<<<< Temporary merge branch 1
+        expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10))
+=========
+        expandableListView.setIndicatorBounds(
+            width - getPixelFromDips(50),
+            width - getPixelFromDips(10)
+        )
+>>>>>>>>> Temporary merge branch 2
+    }
+
+    private fun getPixelFromDips(pixels: Int): Int {
+        val scale = resources.displayMetrics.density
+        return (pixels * scale + 0.5f).toInt()
     }
 }
