@@ -8,6 +8,8 @@
     <color name="red">#ff4500</color>
     <color name="pink">#EA7D73</color>
     <color name="toolbar_title_color">#FFFFFF</color>
+    <color name="phone_number_color">#333</color>
+
 
 
 </resources>

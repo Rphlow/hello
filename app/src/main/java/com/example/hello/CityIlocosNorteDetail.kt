@@ -17,6 +17,7 @@ class CityIlocosNorteDetail : AppCompatActivity() {
         setContentView(R.layout.activity_city_ilocos_norte_detail)
 
         val container: LinearLayout = findViewById(R.id.container)
+        val cityName = intent.getStringExtra("CITY_NAME") ?: return
         val message = intent.getStringExtra("MESSAGE") ?: return
 
         // Add title "Emergency Hotlines"
@@ -25,6 +26,13 @@ class CityIlocosNorteDetail : AppCompatActivity() {
         titleTextView.textSize = 20f
         titleTextView.setPadding(0, 0, 0, 16)
         container.addView(titleTextView)
+
+        // Add the city name below the "Emergency Hotlines" title
+        val cityTextView = TextView(this)
+        cityTextView.text = cityName
+        cityTextView.textSize = 18f
+        cityTextView.setPadding(0, 0, 0, 16)
+        container.addView(cityTextView)
 
         // Split the message into lines
         val lines = message.split("\n")
@@ -41,6 +49,7 @@ class CityIlocosNorteDetail : AppCompatActivity() {
                     val textView = TextView(this)
                     textView.text = "$description: $trimmedNumber"
                     textView.setPadding(0, 0, 0, 8) // Add some space between items
+                    textView.setTextColor(getColor(R.color.phone_number_color)) // Change text color of the number
                     container.addView(textView)
 
                     val button = Button(this)

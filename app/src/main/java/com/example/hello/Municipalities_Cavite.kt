@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -32,6 +33,13 @@ class Municipalities_Cavite: AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val dividerItemDecoration = DividerItemDecoration(
+            recyclerView.context,
+            (recyclerView.layoutManager as LinearLayoutManager).orientation
+        )
+        dividerItemDecoration.setDrawable(getDrawable(R.drawable.divider)!!)
+        recyclerView.addItemDecoration(dividerItemDecoration)
+
         val cities = listOf(
             "Alfonso",
             "Amadeo",
@@ -48,7 +56,7 @@ class Municipalities_Cavite: AppCompatActivity() {
             "Tanza",
             "Ternate",
 
-        )
+            )
         cityAdapter = CityAdapter(cities) { city ->
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
@@ -155,6 +163,7 @@ class Municipalities_Cavite: AppCompatActivity() {
 
                 else -> "Default message"
             }
+            intent.putExtra("CITY_NAME", city)
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
         }

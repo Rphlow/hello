@@ -9,8 +9,11 @@ import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.graphics.drawable.InsetDrawable
+import androidx.core.content.ContextCompat
 
 class City_Cavite : AppCompatActivity() {
 
@@ -31,6 +34,11 @@ class City_Cavite : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val dividerDrawable = ContextCompat.getDrawable(this, R.drawable.divider)!!
+        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, (recyclerView.layoutManager as LinearLayoutManager).orientation)
+        dividerItemDecoration.setDrawable(dividerDrawable)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
         val cities = listOf("Bacoor", "Carmona", "Cavite City", "Dasmariñas", "General Trias", "Imus", "Tagaytay", "Trece Martires")
         cityAdapter = CityAdapter(cities) { city ->
@@ -88,6 +96,7 @@ class City_Cavite : AppCompatActivity() {
                 """.trimIndent()
                 else -> "No Information Available"
             }
+            intent.putExtra("CITY_NAME", city)
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
         }
