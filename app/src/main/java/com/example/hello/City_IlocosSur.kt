@@ -33,34 +33,25 @@ class City_IlocosSur : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val cities = listOf(
-            "Candon",
-            "Vigan"
-        )
+        val cities = listOf("Candon", "Vigan")
         cityAdapter = CityAdapter(cities) { city ->
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
                 "Candon" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 6-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
-                        " NDRRMC: 231"
+                        "PNP: 0998 598 5076, 0915 361 8181\n" +
+                        " BFP: 0917 183 8911\n" +
+                        "Rescue Team: 0917 115 2900, 0906 303 9666\n"
                 "Vigan" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 1-321-13\n 4-621-32\n " +
-                        "Mobile Number:\n 09123456 ( Smart )\n 09672134 ( Globe )\n" +
-                        "Police Number: 911\n" +
-                        " NDRRMC: 143"
+                        "PNP: 0977 722-0890\n " +
+                        "BFP: 0917-187-3911\n" +
+                        "Rescue Team: 0927 061 1711\n"
                 else -> "No Information Available"
             }
+            intent.putExtra("CITY_NAME", city)
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
         }
         recyclerView.adapter = cityAdapter
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

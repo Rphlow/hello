@@ -40,26 +40,21 @@ class City_IlocosNorte : AppCompatActivity() {
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
                 "Batac" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 1-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 09753627 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 105\n" +
-                        " NDRRMC: 231"
+                        "PNP: 0916 240 6552\n" +
+                        " BFP: 0917-187-4811, 0906-583-6071\n" +
+                        "Rescue Team: 0917 852 5137\n"
                 "Laoag" -> "Emergency Numbers\n " +
-                        "Telephone Number:\n 1-321-13\n 4-621-32\n " +
-                        "Mobile Number:\n 09725483 ( Smart )\n 09672134 ( Globe )\n" +
-                        "Police Number: 911\n" +
-                        " NDRRMC: 110"
+                        "PNP: 0998 598 5020, 0917 155 1087\n" +
+                        " BFP: 0917 183 9811, 0998 950 5042\n" +
+                        "Rescue Team: 0930 699 4790\n"
+
                 else -> "No Information Available"
             }
+            intent.putExtra("CITY_NAME", city)
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
         }
         recyclerView.adapter = cityAdapter
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

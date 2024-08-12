@@ -1,17 +1,19 @@
 package com.example.hello
 
-import android.annotation.SuppressLint
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 class CityIlocosNorteDetail : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_city_ilocos_norte_detail)
@@ -55,13 +57,33 @@ class CityIlocosNorteDetail : AppCompatActivity() {
                     val button = Button(this)
                     button.text = "Call"
                     button.setOnClickListener {
-                        val intent = Intent(Intent.ACTION_DIAL)
-                        intent.data = Uri.parse("tel:$trimmedNumber")
-                        startActivity(intent)
+                        // Check for permission
+                        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                            // Request permission
+                            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE), 1)
+                        } else {
+                            // Permission granted, make the call
+                            makeCall(trimmedNumber)
+                        }
                     }
                     container.addView(button)
                 }
             }
+        }
+    }
+
+    private fun makeCall(phoneNumber: String) {
+        val callIntent = Intent(Intent.ACTION_CALL)
+        callIntent.data = Uri.parse("tel:$phoneNumber")
+        startActivity(callIntent)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 1 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            // Permission granted, make the call
+            val phoneNumber = intent.getStringExtra("PHONE_NUMBER")
+            phoneNumber?.let { makeCall(it) }
         }
     }
 }

@@ -34,46 +34,38 @@ class City_Pangasinan : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val cities = listOf(
-            "Alaminos",
-            "Dagupan",
-            "San Carlos",
-            "Urdaneta"
-        )
+        val cities = listOf( "Alaminos", "Dagupan", "San Carlos", "Urdaneta")
         cityAdapter = CityAdapter(cities) { city ->
             val intent = Intent(this, CityIlocosNorteDetail::class.java)
             val message = when (city) {
                 "Alaminos"-> "Emergency Numbers\n " +
-                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
-                        " NDRRMC: 231"
+                        "PNP: 0998 598 5094, 0998 598 5095\n" +
+                        " BFP: 0919 330 4090, 0917 189 9611\n" +
+                        "Rescue Team: 0947 551 1420, 0977 707 6881\n"
+
                 "Dagupan"-> "Emergency Numbers\n " +
-                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
-                        " NDRRMC: 231"
+                        "PNP: 0916 525 6802, 0933 502 4899\n" +
+                        " BFP: 0917 184 2611\n" +
+                        "Rescue Team: 0968 444 9598\n"
+
                 "San Carlos"-> "Emergency Numbers\n " +
-                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
-                        " NDRRMC: 231"
+                        "PNP: 0977 668 0796\n" +
+                        " BFP: 0917 184 3611" +
+                        "Rescue Team:0949 417 2265\n"
+
                 "Urdaneta"-> "Emergency Numbers\n " +
-                        "Telephone Number:\n 9-234-13\n 4-215-32\n " +
-                        "Mobile Number:\n 098765412 ( Smart )\n 097612567 ( Globe )\n" +
-                        "Police Number: 112\n" +
-                        " NDRRMC: 231"
-                else -> "Default message"
+                        "PNP: 0998 598 5134\n" +
+                        " BFP: 0917 184 4611" +
+                        "Rescue Team: 0917 818 5374\n"
+
+                else -> "No Information Available"
             }
+
+            intent.putExtra("CITY_NAME", city)
             intent.putExtra("MESSAGE", message)
             startActivity(intent)
         }
         recyclerView.adapter = cityAdapter
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
