@@ -66,6 +66,24 @@ class MainActivity : AppCompatActivity {
         val customAdapter = CustomAdapter(this, regionList, imageList)
         binding.listView?.adapter = customAdapter
 
+        binding.bottomNavigation?.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home_icon -> {
+                    // Stay on this activity (MainActivity)
+                    true
+                }
+                R.id.tips_icon -> {
+                    startActivity(Intent(this, Tips::class.java))
+                    true
+                }
+                R.id.map_icon -> {
+                    startActivity(Intent(this, MapsActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, regionList)
         binding.listView?.adapter = adapter
 
