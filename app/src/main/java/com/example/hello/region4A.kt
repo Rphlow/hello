@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.hello.CityExpandableListAdapter
 import com.example.hello.R
 import com.example.hello.databinding.ActivityRegion1Binding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class region4A : AppCompatActivity() {
     private lateinit var binding: ActivityRegion1Binding
@@ -30,6 +31,32 @@ class region4A : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         expandableListView = binding.expandablelistView
+
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home_icon -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+                }
+                R.id.tips_icon -> {
+                    startActivity(Intent(this, Tips::class.java))
+                    true
+                }
+                R.id.map_icon -> {
+                    startActivity(Intent(this, MapsActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
+        val regionData = RegionRepository.region4AData
+        val headerList = regionData.cities
+        val childList = listOf(
+            regionData.cities,
+            regionData.municipalities
+        )
 
         val header1: MutableList<String> = ArrayList()
         header1.add("Cities")

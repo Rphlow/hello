@@ -38,6 +38,24 @@ class NCR : AppCompatActivity() {
         supportActionBar?.title = "NCR"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        binding.bottomNavigation?.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                com.example.hello.R.id.home_icon -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+                }
+                com.example.hello.R.id.tips_icon -> {
+                    startActivity(Intent(this, Tips::class.java))
+                    true
+                }
+                com.example.hello.R.id.map_icon -> {
+                    startActivity(Intent(this, MapsActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, provinceList)
         binding.listView?.adapter = adapter
         binding.listView?.setOnItemClickListener { parent, view, position, id ->

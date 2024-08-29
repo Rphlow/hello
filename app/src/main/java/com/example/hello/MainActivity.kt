@@ -61,8 +61,6 @@ class MainActivity : AppCompatActivity {
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Regions in Luzon"
 
-
-
         val customAdapter = CustomAdapter(this, regionList, imageList)
         binding.listView?.adapter = customAdapter
 

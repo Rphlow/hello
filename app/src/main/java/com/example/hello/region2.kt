@@ -30,6 +30,24 @@ class region2 : AppCompatActivity() {
 
         expandableListView = binding.expandablelistView
 
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home_icon -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    true
+                }
+                R.id.tips_icon -> {
+                    startActivity(Intent(this, Tips::class.java))
+                    true
+                }
+                R.id.map_icon -> {
+                    startActivity(Intent(this, MapsActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
         val header1: MutableList<String> = ArrayList()
         header1.add("Cities")
         header1.add("Municipalities")

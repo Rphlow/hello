@@ -115,6 +115,7 @@ class Municipalities_Cavite: AppCompatActivity() {
                     MDRRMO: 0906 568 0500
                     BFP: (046) 412-1911, 0936 088 2538
                     PNP: (046) 412 1161, 0998 598 5619 
+                    test: 09671646122
                     
                     
                 """.trimIndent()
